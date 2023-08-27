@@ -129,3 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # the login_redirect_url
 LOGIN_REDIRECT_URL = 'learning_logs:index'
+# the logout_redirect_url
+LOGOUT_REDIRECT_URL = 'learning_logs:index'
+
