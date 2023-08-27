@@ -74,6 +74,10 @@ def edit_entry(request, entry_id):
     """edit an entry"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    # Make sure the topic belongs to the current user.
+    if topic.owner != request.user:
+        raise Http404
+
 
     if request.method != 'POST':
         form = EntryForm(instance=entry)
